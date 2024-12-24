@@ -25,12 +25,26 @@
   top: -10px;
   animation: confetti-fall 3s linear infinite;
 }
+  .prize-reveal {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    max-width: 90vw;
+    width: 500px;
+    margin: 0 auto;
+  }
 
-.prize-reveal {
-  text-align: center;
-  animation: scale-in 0.5s ease-out;
-}
-
+  .prize-message {
+    white-space: pre-line;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin: 20px 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
 .winner-text {
   font-size: 3em;
   color: #fff;
@@ -97,4 +111,11 @@
 @keyframes slide-up {
   0% { transform: translateY(50px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+.screenshot-area {
+  background: radial-gradient(circle at center, #1a472a, #0a2615);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }

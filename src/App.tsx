@@ -8,7 +8,7 @@ import { GiftRoulette } from './components/GiftRoulette'
 import { PlayerForm } from './components/PlayerForm'
 import './App.css'
 import { useIpAddress } from './hooks/useIpAddress'
-import { config } from './config/environment'
+import { CelebrationScreen } from './components/CelebrationScreen'
 
 interface Player {
   name: string;
@@ -24,14 +24,6 @@ function App() {
   const { ipAddress } = useIpAddress();
   const { loading, error, checkPlayer, savePlayer } = useGoogleSheets();
 
-  
-console.log({ config: {
-  email: config.googleSheets.clientEmail,
-  key: config.googleSheets.privateKey,
-  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-} })
-  
-  console.log({ ipAddress })
 
   const handleStartGame = async (playerName: string) => {
     try {
@@ -115,11 +107,10 @@ console.log({ config: {
           )}
 
           {gameState === 'finished' && currentPlayer && (
-            <div className="celebration">
-              <h1>🎉 Congratulations {currentPlayer.name}! 🎉</h1>
-              <h2>You won ₱{currentPlayer.prize}!</h2>
-              <p>Merry Christmas! 🎄</p>
-            </div>
+            <CelebrationScreen 
+            playerName={currentPlayer.name}
+            prize={currentPlayer.prize!}
+          />
           )}
         </>
       )}

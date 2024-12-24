@@ -1,6 +1,6 @@
-const SPREADSHEET_ID = "1hF0DEYXcy9_MAlUsl18oxV3BuVLnUTpPVSwH7HgL9r4";
-const API_KEY = "AIzaSyBmb_zXxULxJ_xu_T_27fjpBxKsKTniEl4"
-const SHEET_NAME = "virtual-pamasko-2024";
+const SPREADSHEET_ID = import.meta.env.VITE_GOOGLE_SPREADSHEET_ID;
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const SHEET_NAME = import.meta.env.VITE_GOOGLE_SHEET_NAME;
 
 interface PlayerRecord {
   name: string;

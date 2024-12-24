@@ -17,12 +17,12 @@ export const GiftRoulette = ({ onComplete }: GiftRouletteProps) => {
     const random = Math.random() * 100;
     
     // 5% chance for high prizes
-    if (random <= 5) {
+    if (random <= 6) {
       const highPrizes = [1000, 900, 800, 600, 700];
       return highPrizes[Math.floor(Math.random() * highPrizes.length)];
     }
     
-    // 95% chance for lower prizes
+    // 90% chance for lower prizes
     const regularPrizes = [100, 200, 300, 400, 500];
     return regularPrizes[Math.floor(Math.random() * regularPrizes.length)];
   };
