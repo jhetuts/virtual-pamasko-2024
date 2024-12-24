@@ -9,6 +9,7 @@ import { PlayerForm } from './components/PlayerForm'
 import './App.css'
 import { useIpAddress } from './hooks/useIpAddress'
 import { CelebrationScreen } from './components/CelebrationScreen'
+import { useDevToolsProtection } from './hooks/useDevToolsProtection'
 
 interface Player {
   name: string;
@@ -18,12 +19,11 @@ interface Player {
 }
 
 function App() {
-
+  useDevToolsProtection();
   const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
   const [gameState, setGameState] = useState<'initial' | 'playing' | 'finished'>('initial');
   const { ipAddress } = useIpAddress();
   const { loading, error, checkPlayer, savePlayer } = useGoogleSheets();
-
 
   const handleStartGame = async (playerName: string) => {
     try {

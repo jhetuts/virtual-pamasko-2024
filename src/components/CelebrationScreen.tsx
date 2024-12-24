@@ -28,8 +28,29 @@ const searchParams = new URLSearchParams(window.location.search);
     playWin();
   }, []);
 
+  const addWatermarkPattern = (element: HTMLElement) => {
+    const watermarkContainer = document.createElement('div');
+    watermarkContainer.className = 'watermark-pattern';
+    
+    // Create multiple watermark layers with different rotations and positions
+    for (let i = 0; i < 7; i++) {
+      const watermark = document.createElement('div');
+      watermark.className = `watermark-text layer-${i}`;
+      watermark.textContent = `PAMASKO-2024-${Date.now()}-${hostTitle}-${hostName}`;
+      watermarkContainer.appendChild(watermark);
+    }
+    
+    element.appendChild(watermarkContainer);
+  };
+
   const captureAndShare = async () => {
     if (!celebrationRef.current) return;
+
+    const prizeElement = celebrationRef.current.querySelector('.prize-amount');
+    if (prizeElement) {
+      addWatermarkPattern(prizeElement as HTMLElement);
+    }
+  
 
     playChime();
 
@@ -38,6 +59,9 @@ const searchParams = new URLSearchParams(window.location.search);
       const imageBlob = await new Promise<Blob>((resolve) => {
         canvas.toBlob((blob) => resolve(blob!), "image/png");
       });
+
+      const watermarkPattern = celebrationRef.current.querySelector('.watermark-pattern');
+      watermarkPattern?.remove();
 
       const shareData = {
         title: "Virtual Pamasko 2024",
