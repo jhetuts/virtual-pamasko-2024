@@ -3,6 +3,8 @@
   width: 400px;
   height: 400px;
   margin: 50px auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .wheel {
@@ -61,6 +63,7 @@
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
 }
 .spin-button:hover:not(:disabled) {
   transform: translateX(-50%) scale(1.1);

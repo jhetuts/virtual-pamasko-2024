@@ -83,6 +83,12 @@
   animation: slide-up 0.5s ease-out;
 }
 
+@media screen and (max-width: 768px) {
+  .winner-text {
+    font-size: 2em;
+  }
+}
+
 @keyframes confetti-fall {
   0% { transform: translateY(0) rotate(0deg); }
   100% { transform: translateY(100vh) rotate(360deg); }

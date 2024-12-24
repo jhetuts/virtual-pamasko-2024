@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import useSound from "use-sound";
 import "./CelebrationScreen.css";

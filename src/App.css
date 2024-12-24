@@ -21,7 +21,6 @@
 }
 
 .christmas-container {
-  padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -63,4 +62,10 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+    max-width: 100%;
+  }
 }

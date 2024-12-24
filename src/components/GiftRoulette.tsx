@@ -17,7 +17,7 @@ export const GiftRoulette = ({ onComplete }: GiftRouletteProps) => {
     const random = Math.random() * 100;
     
     // 5% chance for high prizes
-    if (random <= 6) {
+    if (random <= 4) {
       const highPrizes = [1000, 900, 800, 600, 700];
       return highPrizes[Math.floor(Math.random() * highPrizes.length)];
     }
@@ -49,7 +49,7 @@ export const GiftRoulette = ({ onComplete }: GiftRouletteProps) => {
       <div 
         ref={wheelRef}
         className={`wheel ${isSpinning ? 'spinning' : ''}`}
-        style={{ transform: `rotate(${rotation}deg)` }}
+        style={{ transform: `rotate(${rotation}deg) scale(0.8)` }}
       >
         {rangePrize.map((prize, index) => (
           <div
