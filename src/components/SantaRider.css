@@ -1,0 +1,107 @@
+.santa-rider {
+  position: fixed;
+  top: 50px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.sleigh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: scale(2) scaleX(-1);
+}
+
+.santa {
+  font-size: 24px;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.reindeers {
+  display: flex;
+  gap: 5px;
+}
+
+.reindeers span {
+  font-size: 24px;
+  animation: gallop 0.5s infinite alternate;
+}
+
+.reindeers span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.reindeers span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.magic-trail {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #FFD700,
+    #FF69B4,
+    transparent
+  );
+  filter: blur(4px);
+  opacity: 0.6;
+  animation: trail 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gallop {
+  from {
+    transform: translateY(0) rotate(-5deg);
+  }
+  to {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes trail {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 100px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* Snow effect behind Santa */
+.santa-rider::before {
+  content: '❄';
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  animation: snow 1s linear infinite;
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) rotate(360deg);
+    opacity: 0;
+  }
+}

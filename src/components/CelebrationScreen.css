@@ -1,0 +1,100 @@
+.celebration-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a0f3d 0%, #0a0520 100%);
+  z-index: 1000;
+}
+
+.confetti-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confetti-fall 3s linear infinite;
+}
+
+.prize-reveal {
+  text-align: center;
+  animation: scale-in 0.5s ease-out;
+}
+
+.winner-text {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 10px #ffd700;
+  margin-bottom: 30px;
+  animation: bounce 1s ease infinite;
+}
+
+.sparkle-text {
+  display: inline-block;
+  animation: sparkle 1s ease infinite;
+}
+
+.gift-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 30px auto;
+  background: linear-gradient(45deg, #ff4444, #ff8844);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 68, 68, 0.5);
+  animation: pulse 2s ease infinite;
+}
+
+.prize-amount {
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 200px;
+  font-weight: bold;
+}
+
+.christmas-message {
+  color: #fff;
+  margin-top: 30px;
+  animation: slide-up 0.5s ease-out;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
